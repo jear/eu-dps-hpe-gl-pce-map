@@ -1,0 +1,25 @@
+# Deployment of Smart3
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: hpe-dps
+  name: hpe-dps
+  labels:
+    app: hpe-dps
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpe-dps
+  template:
+    metadata:
+      labels:
+        app: hpe-dps
+    spec:
+      containers:
+        - name: hpe-dps
+          image: jear/html-server-image:v1
+          ports:
+            - name: hpe-dps-web
+              containerPort: 80    
+          imagePullPolicy: Always  

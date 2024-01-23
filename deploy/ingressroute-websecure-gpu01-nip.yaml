@@ -1,0 +1,58 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ratelimit
+  namespace: hpe-dps
+spec:
+  rateLimit:
+    average: 100
+    burst: 50
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: ipwhitelist
+  namespace: hpe-dps
+spec:
+  ipWhiteList:
+   sourceRange:
+      - 127.0.0.1/32
+      - 165.225.76.229
+      - 91.170.182.6
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: security
+  namespace: hpe-dps
+spec:
+  headers:
+    frameDeny: true
+    sslRedirect: true
+    browserXssFilter: true
+    contentTypeNosniff: true
+    stsIncludeSubdomains: true
+    stsPreload: true
+    stsSeconds: 31536000
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hpe-dps
+  namespace: hpe-dps
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`hpe-dps.83-206-89-104.nip.io`)
+      kind: Rule
+      services:
+        - name: hpe-dps
+          port: 80
+      middlewares:
+      - name: security
+      - name: ratelimit
+#      - name: ipwhitelist
+  tls:
+    certResolver: letsencrypt
