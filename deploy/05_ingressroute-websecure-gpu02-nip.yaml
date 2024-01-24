@@ -45,7 +45,7 @@ spec:
   entryPoints:
     - websecure
   routes:
-    - match: Host(`hpe-dps.83-206-89-104.nip.io`)
+    - match: Host(`cloud3-dps.83-206-89-105.nip.io`)
       kind: Rule
       services:
         - name: hpe-dps
@@ -56,3 +56,4 @@ spec:
 #      - name: ipwhitelist
   tls:
     certResolver: letsencrypt
+

@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hpe-dps
-          image: jear/html-server-image:v1
+          image: jear/html-server-image:v1.2
           ports:
             - name: hpe-dps-web
               containerPort: 80    

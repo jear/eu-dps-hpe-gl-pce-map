@@ -11,7 +11,7 @@ spec:
     app: hpe-dps
   type: ClusterIP
   ports:
-  - name: hpe-dps-service-web
+  - name: hpe-dps-web
     protocol: TCP
     port: 80
     targetPort: hpe-dps-web
