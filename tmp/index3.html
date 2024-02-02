@@ -2,11 +2,15 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
     <!-- Make sure you put this AFTER Leaflet's CSS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/leaflet.geodesic"></script>
+
+    <script src="Leaflet.Geodesic/leaflet.geodesic"></script>
 
     <style>
       html, body {
@@ -14,33 +18,17 @@
         padding: 0;
         margin: 0;
       }
-
       #map {
         /* configure the size of the map */
         width: 100%;
         height: 100%;
       }
-
-      .info {
-            padding: 6px 8px;
-            font: 14px/16px Arial, Helvetica, sans-serif;
-            background: white;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-            border-radius: 5px;
-        }
-
-      .info h4 {
-            margin: 0 0 5px;
-            font: 22px/24px Arial, Helvetica, sans-serif;
-            color: #777;
-        }
-
     </style>
   </head>
-  <body>
+
+  <body class="">
     <div id="map"></div>
-    <script>
+    <script type="text/javascript">
       // initialize Leaflet
       var map = L.map('map').setView({lon: 4.356641, lat: 50.8457}, 5);
 
@@ -55,8 +43,8 @@
 
       // show a marker on the map
       // L.marker({lon: 4.356641, lat: 50.8457}).bindPopup('Carrrefour de l\'Europe').addTo(map);
-      // var marker = L.marker([50.8457, 4.356641]).addTo(map);
-      // marker.bindPopup("<b>Carrrefour de l\'Europe</b><br>I am a popup.").openPopup();
+      var marker = L.marker([50.8457, 4.356641]).addTo(map);
+      marker.bindPopup("<b>Carrrefour de l\'Europe</b><br>I am a popup.").openPopup();
       // 
 
       var berlin = new L.LatLng(52.5, 13.35);
@@ -114,95 +102,6 @@
           geodesiccircle.setRadius(geodesiccircle.distanceTo(e.latlng));
           info.update(geodesiccircle.statistics);
       });
-
-
-      /*
-      var circle = L.circle([50.86, 4.356641], {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5,
-        radius: 500
-      }).addTo(map);
-      circle.bindPopup("I am a circle.");
-      */
-     /*
-      var polygon = L.polygon([
-        [50.86, 4.37],
-        [50.86, 4.39],
-        [50.87, 4.38]
-      ]).addTo(map);
-      polygon.bindPopup("I am a polygon.");
-      */
-     /*
-      var myLines = [{
-            "type": "LineString",
-            "coordinates": [[4.37, 50.85], [4.37, 50.86], [4.37, 50.87]]
-        }, {
-            "type": "LineString",
-            "coordinates": [[4.37, 50.80], [4.37, 50.81], [4.37, 50.82]]
-        }];
-
-        var myStyle = {
-            "color": "#ff7800",
-            "weight": 5,
-            "opacity": 0.65
-        };
-
-        L.geoJSON(myLines, {
-            style: myStyle
-        }).addTo(map);
-      */
-     /*
-      const freeBusLayer = L.geoJSON(freeBus, {
-
-      filter(feature, layer) {
-        if (feature.properties) {
-          // If the property "underConstruction" exists and is true, return false (don't render features under construction)
-          return feature.properties.underConstruction !== undefined ? !feature.properties.underConstruction : true;
-        }
-        return false;
-      },
-
-      onEachFeature
-      }).addTo(map);
-      */
-
-      /*
-      function onMapClick(e) {
-          alert("You clicked the map at " + e.latlng);
-      }
-
-      map.on('click', onMapClick);*/
-
-      /*
-      var popup = L.popup();
-
-      function onMapClick(e) {
-          popup
-              .setLatLng(e.latlng)
-              .setContent("You clicked the map at " + e.latlng.toString())
-              .openOn(map);
-      }
-
-      map.on('click', onMapClick);*/
-      
-      /*
-      var myLayer = L.geoJSON().addTo(map);
-      myLayer.addData(geojsonFeature);
-
-      var geojsonFeature = {
-        "type": "Feature",
-        "properties": {
-          "name": "Coors Field",
-          "amenity": "Baseball Stadium",
-          "popupContent": "This is where the Rockies play!"
-        },
-        "geometry": {
-          "type": "Point",
-          "coordinates": [50.88, 4.39]
-        }
-      };
-      */
 
     </script>
   </body>

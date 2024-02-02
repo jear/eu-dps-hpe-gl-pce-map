@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hpe-dps
-          image: jear/html-server-image:v1.2
+          image: harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v0.8
           ports:
             - name: hpe-dps-web
               containerPort: 80    

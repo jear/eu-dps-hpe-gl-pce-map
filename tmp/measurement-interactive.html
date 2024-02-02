@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h4 {
+            margin: 0 0 5px;
+            font: 22px/24px Arial, Helvetica, sans-serif;
+            color: #777;
+        }
+
+        .trash {
+            background: rgba(255, 255, 255, 0.8);
+            width: 30px;
+            height: 30px;
+            background-position: center center;
+            background-size: 70%;
+            background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='iso-8859-1'%3F%3E%3C!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3C!DOCTYPE svg PUBLIC '-//W3C//DTD SVG 1.1//EN' 'http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd'%3E%3Csvg version='1.1' id='Capa_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='792.024px' height='792.024px' viewBox='0 0 792.024 792.024' style='enable-background:new 0 0 792.024 792.024;' xml:space='preserve'%3E%3Cg%3E%3Cg id='_x34_3'%3E%3Cg%3E%3Cpath d='M585.817,235.853H209.213c-39.622,0-71.729,32.107-71.729,71.729l38.841,412.664c0,39.622,32.107,71.778,71.729,71.778 h304.924c39.622,0,71.729-32.156,71.729-71.778l32.888-412.664C657.596,267.96,625.439,235.853,585.817,235.853z M301.876,666.375c0,19.762-16.054,35.913-35.865,35.913s-35.865-16.151-35.865-35.913V343.349 c0-19.762,16.054-35.816,35.865-35.816s35.865,16.005,35.865,35.816V666.375z M427.427,666.375 c0,19.762-16.053,35.913-35.865,35.913c-19.811,0-35.865-16.151-35.865-35.913V343.349c0-19.762,16.054-35.816,35.865-35.816 c19.812,0,35.865,16.005,35.865,35.816V666.375z M552.979,666.375c0,19.762-16.054,35.913-35.865,35.913 c-19.811,0-35.864-16.151-35.864-35.913V343.349c0-19.762,16.054-35.816,35.864-35.816c19.812,0,35.865,16.005,35.865,35.816 V666.375z M190.037,199.939L624.317,88.246c24.007-6.148,38.45-30.644,32.254-54.602c-6.197-24.007-30.595-38.402-54.603-32.205 L468.172,35.84c-12.346-18.347-34.89-28.106-57.53-22.3l-52.114,13.468c-22.641,5.807-37.67,25.227-39.67,47.234l-151.168,38.89 c-23.959,6.1-38.402,30.595-32.254,54.553C141.631,191.644,166.078,206.087,190.037,199.939z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3Cg%3E%3C/g%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+        }
+    </style>
+    <title>Leaflet.Geodesic demo</title>
+
+    <link rel="stylesheet" href="measurement-interactive_files/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="">
+
+    <script src="measurement-interactive_files/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+
+    <script src="measurement-interactive_files/leaflet.geodesic"></script>
+
+</head>
+
+<body class="">
+    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style=""><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 15; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="measurement-interactive_files/1_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_006.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(20px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_007.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1300px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_005.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(20px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_006.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1300px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_007.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(20px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_006.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1300px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_005.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(20px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_006.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1300px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_008.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-236px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/1_005.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1556px, 47px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_008.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-236px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/2_007.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1556px, 303px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_008.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-236px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/0_005.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1556px, -209px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_007.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(-236px, 559px, 0px); opacity: 1;"><img alt="" role="presentation" src="measurement-interactive_files/3_008.png" class="leaflet-tile" style="width: 256px; height: 256px; transform: translate3d(1556px, 559px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="measurement-interactive_files/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(997px, 184px, 0px);" alt=""></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="1891" height="727" style="transform: translate3d(-158px, -61px, 0px);" viewBox="-158 -61 1891 727"><g><path class="leaflet-interactive" stroke="#3388ff" stroke-opacity="1" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="none" d="M826 127L864 126L912 136L944 149L964 160L997 184"></path></g></svg></div><div class="leaflet-pane leaflet-marker-pane"><img src="measurement-interactive_files/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(997px, 184px, 0px); z-index: 138; outline: none;" alt="" tabindex="0"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(512px, 512px, 0px) scale(2);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div><div class="leaflet-bar leaflet-control leaflet-control-custom trash"></div></div><div class="leaflet-top leaflet-right"><div class="info leaflet-control"><h4>Statistics</h4><b>totalDistance</b><br>4791 km<br><br><b>Points</b><br>2<br><br><b>Vertices</b><br>17</div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</div></div></div></div>
+
+    <script type="text/javascript">
+
+        const map = L.map('map').setView([0, 0], 2);
+        L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            maxZoom: 15,
+            noWrap: true,
+            attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'
+        }).addTo(map);
+
+        var Berlin = new L.LatLng(52.5, 13.35);
+
+        const geodesic = L.geodesic([Berlin], {
+            weight: 7,
+        }).addTo(map);
+
+        const marker = L.marker(Berlin, { draggable: true }).addTo(map)
+            .bindTooltip('Hi There!').bindPopup("Click somewhere else on the map</br>to start the measurement. You can also drag me.").openPopup();
+
+        var info = L.control();
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+            return this._div;
+        };
+        info.addTo(map);
+
+        // method that we will use to update the control based on feature properties passed
+        info.update = function (stats) {
+            const totalDistance = (stats.totalDistance !== undefined ? (stats.totalDistance > 10000) ? (stats.totalDistance / 1000).toFixed(0) + ' km' : (stats.totalDistance).toFixed(0) + ' m' : 'invalid')
+            this._div.innerHTML = '<h4>Statistics</h4><b>totalDistance</b><br/>' + totalDistance +
+                '<br/><br/><b>Points</b><br/>' + stats.points +
+                '<br/><br/><b>Vertices</b><br/>' + stats.vertices;
+        };
+
+        info.update(geodesic.statistics);
+
+        marker.on('drag', (e) => {
+            const points = geodesic.points;
+            points[0].pop()
+            geodesic.addLatLng(marker.getLatLng(), points[0]);
+            if (points[0].length > 1) {
+                let vector = geodesic.geom.geodesic.inverse(points[0][geodesic.points[0].length - 2], marker.getLatLng());
+                const totalDistance = (vector.distance !== undefined ? (vector.distance > 10000) ? (vector.distance / 1000).toFixed(0) + ' km' : (vector.distance).toFixed(0) + ' m' : 'invalid')
+                marker.setTooltipContent(`<b>Segment</b></br>Distance: +${totalDistance}</br>final Bearing: ${vector.finalBearing.toFixed(0)}°`);
+                marker.openTooltip();
+
+                info.update(geodesic.statistics);
+            }
+        });
+
+        map.on('click', (e) => {
+            geodesic.addLatLng(e.latlng);
+            let vector = geodesic.geom.geodesic.inverse(marker.getLatLng(), e.latlng);
+            const totalDistance = (vector.distance !== undefined ? (vector.distance > 10000) ? (vector.distance / 1000).toFixed(0) + ' km' : (vector.distance).toFixed(0) + ' m' : 'invalid')
+            marker.setLatLng(e.latlng);
+            marker.setTooltipContent(`<b>Segment</b></br>Distance: +${totalDistance}</br>final Bearing: ${vector.finalBearing.toFixed(0)}°`);
+            marker.openTooltip();
+            info.update(geodesic.statistics);
+        });
+
+        var Clear = L.Control.extend({
+            options: {
+                position: 'topleft'
+            },
+            onAdd: function (map) {
+                var container = L.DomUtil.create('div', 'leaflet-bar leaflet-control leaflet-control-custom trash');
+
+                container.onclick = function (e) {
+                    e.stopPropagation();
+                    geodesic.setLatLngs([marker.getLatLng()]);
+                    marker.setTooltipContent(`Distance: 0 m</br>Bearing: -`);
+                    info.update(geodesic.statistics);
+                }
+                return container;
+            },
+        });
+
+        map.addControl(new Clear());
+
+    </script>
+
+
+</body></html>

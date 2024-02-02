@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .info {
+            padding: 6px 8px;
+            font: 14px/16px Arial, Helvetica, sans-serif;
+            background: white;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+
+        .info h4 {
+            margin: 0 0 5px;
+            font: 22px/24px Arial, Helvetica, sans-serif;
+            color: #777;
+        }
+    </style>
+    <title>Leaflet.Geodesic demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="circle_interactive_files/leaflet.geodesic"></script>
+</head>
+
+<body class="">
+    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style=""><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 15; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" role="presentation" src="circle_interactive_files/5_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_008.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(532px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(788px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_005.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(276px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_006.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1044px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_003.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(20px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1300px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(20px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1300px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_002.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(20px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_007.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1300px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_008.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-236px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/5_007.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1556px, 194px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_007.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-236px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/4_004.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1556px, -62px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-236px, 450px, 0px); opacity: 1;"><img alt="" role="presentation" src="circle_interactive_files/6_008.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1556px, 450px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="circle_interactive_files/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(808px, 339px, 0px);" alt=""><img src="circle_interactive_files/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(883px, 337px, 0px);" alt=""></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="1891" height="727" style="transform: translate3d(-158px, -61px, 0px);" viewBox="-158 -61 1891 727"><g><path class="leaflet-interactive" stroke="red" stroke-opacity="0.5" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" fill="red" fill-opacity="0.2" fill-rule="evenodd" d="M808 260L827 263L839 267L850 273L860 281L875 301L883 330L881 354L875 370L866 384L854 396L845 402L829 408L813 411L803 411L787 408L771 402L762 396L750 384L741 370L735 354L733 342L734 324L741 301L756 281L766 273L777 267L789 263L808 260"></path></g></svg></div><div class="leaflet-pane leaflet-marker-pane"><img src="circle_interactive_files/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(808px, 339px, 0px); z-index: 258;" alt="" tabindex="0"><img src="circle_interactive_files/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive leaflet-marker-draggable" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(883px, 337px, 0px); z-index: 338; outline: none;" alt="" tabindex="0"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"><div class="info leaflet-control"><h4>Statistics</h4><b>Radius</b><br>492 km<br><br><b>Circumfence</b><br>3088 km<br><br><b>Vertices</b><br>81</div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JS library for interactive maps">Leaflet</a> | Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</div></div></div></div>
+    <div id="distance" class="distance-container"></div>
+
+    <script type="text/javascript">
+
+        var map = L.map('map', {
+            maxBounds: [
+                [-90, -200],
+                [90, 200]
+            ],
+            center: [50, 0],
+            zoom: 4
+        });
+        L.tileLayer('https://a.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
+            maxZoom: 15,
+            noWrap: true,
+            attribution: 'Map tiles by Carto, under CC BY 3.0. Data by OpenStreetMap, under ODbL.'
+        }).addTo(map);
+
+        var berlin = new L.LatLng(52.5, 13.35);
+        var paris = new L.LatLng(48, 2);
+
+        var A = L.marker(berlin, { draggable: true }).bindTooltip('Hi There!').addTo(map);
+        var B = L.marker(paris, { draggable: true }).bindTooltip('Hi There!').addTo(map).bindPopup("Drag me.").openPopup();
+
+        const geodesiccircle = new L.GeodesicCircle(A.getLatLng(), {
+            weight: 7,
+            opacity: 0.5,
+            color: 'red',
+            fill: true,
+            steps: 80
+        }).addTo(map);
+
+        geodesiccircle.setRadius(geodesiccircle.distanceTo(B.getLatLng()));
+
+        var info = L.control();
+        info.onAdd = function (map) {
+            this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+            return this._div;
+        };
+        info.addTo(map);
+
+        // method that we will use to update the control based on feature properties passed
+        info.update = function (stats) {
+            const circumfenceString = (stats.totalDistance ? (stats.totalDistance > 10000) ? (stats.totalDistance / 1000).toFixed(0) + ' km' : (stats.totalDistance).toFixed(0) + ' m' : 'invalid')
+            const radiusString = (geodesiccircle.radius ? (geodesiccircle.radius > 10000) ? (geodesiccircle.radius / 1000).toFixed(0) + ' km' : (geodesiccircle.radius).toFixed(0) + ' m' : 'invalid')
+            this._div.innerHTML = '<h4>Statistics</h4><b>Radius</b><br/>' + radiusString +
+                '<br/><br/><b>Circumfence</b><br/>' + circumfenceString +
+                '<br/><br/><b>Vertices</b><br/>' + stats.vertices;
+        };
+
+        info.update(geodesiccircle.statistics);
+
+        var diff = { lat: 0, lng: 0 };
+        A.on('dragstart', function () {
+            diff = { lat: A.getLatLng().lat - B.getLatLng().lat, lng: A.getLatLng().lng - B.getLatLng().lng };	// remember difference between A and B
+        });
+
+        A.on('drag', (e) => {
+            A.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
+            B.setLatLng({
+                lat: Math.max(-90, Math.min(90, A.getLatLng().lat - diff.lat)),
+                lng: A.getLatLng().lng - diff.lng
+            });	// move B parallel to A            
+
+            const radius = geodesiccircle.geom.distance(e.latlng, B.getLatLng());
+            geodesiccircle.setLatLng(e.latlng, radius);
+            info.update(geodesiccircle.statistics);
+        });
+        B.on('drag', (e) => {
+            B.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
+            geodesiccircle.setRadius(geodesiccircle.distanceTo(e.latlng));
+            info.update(geodesiccircle.statistics);
+        });
+
+    </script>
+
+
+</body></html>
