@@ -59,11 +59,16 @@
       // marker.bindPopup("<b>Carrrefour de l\'Europe</b><br>I am a popup.").openPopup();
       // 
 
-      var berlin = new L.LatLng(52.5, 13.35);
+      var cancom1 = new L.LatLng(53.619150000000026, 10.008105830680448);
+      var uniserver1 = new L.LatLng(52.61593968940498, 4.757832677993928);
+      var ebrc1 = new L.LatLng(49.69407767460152, 6.325216697313522);
+
+      var berlin = new L.LatLng(52.5, 13.35);  
       var paris = new L.LatLng(48, 2);
 
-      var A = L.marker(berlin, { draggable: true }).bindTooltip('Hi There!').addTo(map);
-      var B = L.marker(paris, { draggable: true }).bindTooltip('Hi There!').addTo(map).bindPopup("Drag me.").openPopup();
+      var A = L.marker(uniserver1, { draggable: true }).bindTooltip('Uniserver').addTo(map);
+      var B = L.marker(cancom1, { draggable: true }).bindTooltip('Cancom').addTo(map).bindPopup("Drag me.").openPopup();
+      var C = L.marker(ebrc1, { draggable: true }).bindTooltip('EBRC').addTo(map).bindPopup("Drag me.").openPopup();
 
       const geodesiccircle = new L.GeodesicCircle(A.getLatLng(), {
           weight: 7,
