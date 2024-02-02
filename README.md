@@ -2,9 +2,16 @@
 
 https://switch2osm.org/using-tiles/getting-started-with-leaflet/
 
-
+https://github.com/henrythasler/Leaflet.Geodesic
 
 ```
-docker build -t html-server-image:v1 .
-docker run -d -p 80:80 html-server-image:v1
+
+# Build
+docker build -t harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v0.8 .
+docker push harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v0.8
+
+# Deploy
+k apply -f deploy/03_deployment.yaml -n hpe-dps --validate=false
+
+
 ```
