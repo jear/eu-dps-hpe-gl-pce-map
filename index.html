@@ -60,17 +60,41 @@
       // 
 
       var cancom1 = new L.LatLng(53.619150000000026, 10.008105830680448);
-      var uniserver1 = new L.LatLng(52.61593968940498, 4.757832677993928);
-      var ebrc1 = new L.LatLng(49.69407767460152, 6.325216697313522);
+
+      // var uniserver1 = new L.LatLng(52.61593968940498, 4.757832677993928);
+      var uniserver1 = new L.LatLng(52.293548438775446, 4.945244057672121); // Equinix AM5 - Main A
+      var uniserver2 = new L.LatLng(52.393383919040936, 4.849359470220011); // NorthC Amsterdam - Main B
+      var uniserver3 = new L.LatLng(52.36446231765333, 5.268812752496657); // KPN DC - NorthC Almere - Backup and DR
+
+      var ebrc1 = new L.LatLng(49.69407767460152, 6.325216697313522); // European Reliance Centre East Betzdorf
+      var ebrc2 = new L.LatLng(49.64865902481996, 5.958522883180308); // Resilience Centre West Windhof
+      var ebrc3 = new L.LatLng(49.49791247578659, 6.051859510650983); // Resilience Centre South Kayl
 
       var berlin = new L.LatLng(52.5, 13.35);  
       var paris = new L.LatLng(48, 2);
+      var lysdemolab69 = new L.LatLng(45.71587354143691, 4.934977515880003);
 
-      var A = L.marker(uniserver1, { draggable: true }).bindTooltip('Uniserver').addTo(map);
-      var B = L.marker(cancom1, { draggable: true }).bindTooltip('Cancom').addTo(map).bindPopup("Drag me.").openPopup();
-      var C = L.marker(ebrc1, { draggable: true }).bindTooltip('EBRC').addTo(map).bindPopup("Drag me.").openPopup();
+      var center1 = new L.LatLng(51.93, 8.14)
+      var region1 = new L.LatLng(50.13, 12)
 
-      const geodesiccircle = new L.GeodesicCircle(A.getLatLng(), {
+      var LYS = L.marker(lysdemolab69, { draggable: false }).bindTooltip('This App runs here').addTo(map).bindPopup("HPE Managed On-prem Kubernetes 1.27.8").openPopup();
+
+      var O = L.marker(center1, { draggable: true }).bindTooltip('GeodesicCircleCenter').addTo(map).bindPopup("Drag me to change the center of the Circle.").openPopup();
+      var R = L.marker(region1, { draggable: true }).bindTooltip('GeodesicCircleRadius').addTo(map).bindPopup("Drag me to measure geodesic distance from the center of the circle.").openPopup();
+
+      var A1 = L.marker(uniserver1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver/Equinix DC1').addTo(map).bindPopup('Region_EU1-AZ1a');
+      var A2 = L.marker(uniserver2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver DC2').addTo(map).bindPopup('Region_EU1-AZ1b');
+      var A2 = L.marker(uniserver3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver DC3 - Backup and DR').addTo(map).bindPopup('Region_EU1-AZ1c');
+  
+      var B1 = L.marker(cancom1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Cancom DC1').addTo(map).bindPopup('Region_EU1-AZ2a');
+
+      var C1 = L.marker(ebrc1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC1').addTo(map).bindPopup('Region_EU1-AZ3a');
+      var C2 = L.marker(ebrc2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC2').addTo(map).bindPopup('Region_EU1-AZ3b');
+      var C3 = L.marker(ebrc3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC3').addTo(map).bindPopup('Region_EU1-AZ3c');
+
+
+
+      const geodesiccircle = new L.GeodesicCircle(O.getLatLng(), {
           weight: 7,
           opacity: 0.5,
           color: 'red',
@@ -78,7 +102,7 @@
           steps: 80
       }).addTo(map);
 
-      geodesiccircle.setRadius(geodesiccircle.distanceTo(B.getLatLng()));
+      geodesiccircle.setRadius(geodesiccircle.distanceTo(R.getLatLng()));
 
       var info = L.control();
       info.onAdd = function (map) {
@@ -99,23 +123,23 @@
       info.update(geodesiccircle.statistics);
 
       var diff = { lat: 0, lng: 0 };
-      A.on('dragstart', function () {
-          diff = { lat: A.getLatLng().lat - B.getLatLng().lat, lng: A.getLatLng().lng - B.getLatLng().lng };	// remember difference between A and B
+      O.on('dragstart', function () {
+          diff = { lat: O.getLatLng().lat - R.getLatLng().lat, lng: O.getLatLng().lng - R.getLatLng().lng };	// remember difference between O and R
       });
 
-      A.on('drag', (e) => {
-          A.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
-          B.setLatLng({
-              lat: Math.max(-90, Math.min(90, A.getLatLng().lat - diff.lat)),
-              lng: A.getLatLng().lng - diff.lng
-          });	// move B parallel to A            
+      O.on('drag', (e) => {
+          O.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
+          R.setLatLng({
+              lat: Math.max(-90, Math.min(90, O.getLatLng().lat - diff.lat)),
+              lng: O.getLatLng().lng - diff.lng
+          });	// move R parallel to O           
 
-          const radius = geodesiccircle.geom.distance(e.latlng, B.getLatLng());
+          const radius = geodesiccircle.geom.distance(e.latlng, R.getLatLng());
           geodesiccircle.setLatLng(e.latlng, radius);
           info.update(geodesiccircle.statistics);
       });
-      B.on('drag', (e) => {
-          B.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
+      R.on('drag', (e) => {
+          R.setTooltipContent(`${Math.round(10000 * e.latlng.lat) / 10000} ${Math.round(10000 * e.latlng.lng) / 10000}`);
           geodesiccircle.setRadius(geodesiccircle.distanceTo(e.latlng));
           info.update(geodesiccircle.statistics);
       });
