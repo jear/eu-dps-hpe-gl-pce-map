@@ -7,9 +7,9 @@ https://github.com/henrythasler/Leaflet.Geodesic
 ```
 
 # Build
-docker build -t harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v1.36 .
-docker push harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v1.36
-docker push harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:latest
+APP_VERSION=v1.36
+docker build -t harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:$APP_VERSION .
+docker push harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:$APP_VERSION
 
 # Deploy
 k apply -f deploy/03_deployment.yaml -n hpe-dps --validate=false
