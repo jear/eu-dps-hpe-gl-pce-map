@@ -4,17 +4,16 @@ import {
   Popup,
   TileLayer,
   useMapEvents,
-  useMapEvent,
 } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import "./mapCustomization.css";
-import { useEffect, useState } from "react";
-import { Button } from "grommet";
-import { LatLng } from "leaflet";
+import { useState } from "react";
+import { latLng } from "leaflet";
+
 // import { GeodesicCircleClass, GeodesicLine } from "leaflet.geodesic";
 
 const LocationMarker = () => {
-  const [position, setPosition] = useState(undefined);
+  const [position, setPosition] = useState(latLng(51.505, -0.09));
   const map = useMapEvents({
     click() {
       map.locate();
@@ -25,7 +24,7 @@ const LocationMarker = () => {
     },
   });
 
-  return position === undefined ? null : (
+  return position === null ? null : (
     <Marker position={position}>
       <Popup>You are here</Popup>
     </Marker>
@@ -33,8 +32,8 @@ const LocationMarker = () => {
 };
 
 export const LeafletMap = () => {
-  const [x, setx] = useState(51.505);
-  const [y, sety] = useState(-0.09);
+  const x = 51.505;
+  const y = -0.09;
 
   return (
     <>
