@@ -13,7 +13,7 @@ import { latLng } from "leaflet";
 // import { GeodesicCircleClass, GeodesicLine } from "leaflet.geodesic";
 
 const LocationMarker = () => {
-  const [position, setPosition] = useState(latLng(51.505, -0.09));
+  const [position, setPosition] = useState(latLng(50.8460886108987, 4.3561856932529315));
   const map = useMapEvents({
     click() {
       map.locate();
@@ -32,8 +32,8 @@ const LocationMarker = () => {
 };
 
 export const LeafletMap = () => {
-  const x = 51.505;
-  const y = -0.09;
+  const x = 50.8460886108987;
+  const y = 4.3561856932529315;
 
   return (
     <>

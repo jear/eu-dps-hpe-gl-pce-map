@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: hpe-dps
-          image: harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v1.38
+          image: harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v1.40
           resources:
             requests: 
               cpu: "250m"
