@@ -1,0 +1,17 @@
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: hpe-dps-dev
+  namespace: hpe-dps
+  labels:
+    app: hpe-dps-dev
+spec:
+  selector:
+    app: hpe-dps-dev
+  type: ClusterIP
+  ports:
+  - name: hpe-dps-web-dev
+    protocol: TCP
+    port: 80
+    targetPort: hpe-dps-web-dev

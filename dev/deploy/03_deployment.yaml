@@ -1,0 +1,40 @@
+# Deployment of Smart3
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  namespace: hpe-dps
+  name: hpe-dps-dev
+  labels:
+    app: hpe-dps-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hpe-dps-dev
+  template:
+    metadata:
+      labels:
+        app: hpe-dps-dev
+    spec:
+      containers:
+        - name: hpe-dps-dev
+          image: harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:v1.41
+          resources:
+            requests: 
+              cpu: "250m"
+              memory: "64Mi"
+              #            limits:
+              #cpu : "500m"
+              #memory: "128Mi"
+          ports:
+            - name: hpe-dps-web-dev
+              containerPort: 80    
+          imagePullPolicy: Always  
+          volumeMounts:
+            - name: nginx-default-config-dev
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+      volumes:
+        - name: nginx-default-config-dev
+          configMap:
+            name: defaultnginx-dev
