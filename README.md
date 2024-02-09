@@ -1,4 +1,4 @@
-# Measure consortium member's DC inter-distance ;   has to be > 200kms
+# Measure consortium member's DC inter-distancewhich has to be greater than 200kms
 
 https://switch2osm.org/using-tiles/getting-started-with-leaflet/
 
