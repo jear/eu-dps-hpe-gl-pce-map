@@ -9,8 +9,12 @@ https://switch2osm.org/using-tiles/getting-started-with-leaflet/
 https://github.com/henrythasler/Leaflet.Geodesic
 
 ```
+# npm
+npm install
+npm run dev
+npm run build
 
-# Build
+# Docker Build
 APP_VERSION=v1.36
 docker build -t harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:$APP_VERSION .
 docker push harbor.datasvc01.lysdemolab.fr/jear/cloud3-dsp:$APP_VERSION
