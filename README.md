@@ -1,4 +1,4 @@
-# My metamorphosis ( Transformation ) : since I don't have to manage my IT infrastrure, I can do peering and write Typescript :-)
+# My metamorphosis ( Transformation ) : because I don't have to manage my IT infrastrure anymore, I can do peering with new colleagues and write Typescript :-)
 
 Measure consortium member's DC inter-distancewhich has to be greater than 200kms
 
