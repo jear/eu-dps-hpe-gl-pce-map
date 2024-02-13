@@ -18,7 +18,7 @@ function App() {
         <Heading level={1}>
           Optimizing the European Sovereign cloud Costs with common HPE GreenLake PCE
         </Heading>
-        <Box width="medium" alignSelf="center">
+        <Box width="medium" alignSelf="left">
           <Button
             fill
             size="large"
