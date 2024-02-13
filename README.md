@@ -4,9 +4,9 @@ TypeScript: JavaScript With Syntax For Types.
 
 Measure consortium member's DC inter-distancewhich has to be greater than 200kms
 
-https://switch2osm.org/using-tiles/getting-started-with-leaflet/
-
-https://github.com/henrythasler/Leaflet.Geodesic
+### https://switch2osm.org/using-tiles/getting-started-with-leaflet/
+### https://github.com/henrythasler/Leaflet.Geodesic
+### https://react-leaflet.js.org/
 
 ```
 # npm
