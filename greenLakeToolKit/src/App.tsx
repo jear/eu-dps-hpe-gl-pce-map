@@ -16,14 +16,9 @@ function App() {
         gap={"medium"}
       >
         <Heading level={1}>
-          Building the European Sovereign cloud with HPE GreenLake PCE
+          Optimizing the European Sovereign cloud Costs with common HPE GreenLake PCE
         </Heading>
-
-        <Box border height={"50vh"} align="center">
-          <LeafletMap />
-        </Box>
-
-        <Box width="medium" alignSelf="end">
+        <Box width="medium" alignSelf="center">
           <Button
             fill
             size="large"
@@ -35,6 +30,25 @@ function App() {
             }}
           />
         </Box>
+
+
+        <Box border height={"50vh"} align="center">
+          <LeafletMap />
+        </Box>
+
+        <Box width="small" alignSelf="end">
+        <Button
+            fill
+            size="small"
+            primary
+            label="Github"
+            icon={<Hpe />}
+            onClick={() => {
+              window.open("https://github.com/jear/eu-dps-hpe-gl-pce-map", "_blank");
+            }}
+          />
+        </Box>
+
       </Box>
     </Grommet>
   );

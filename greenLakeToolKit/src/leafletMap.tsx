@@ -13,7 +13,7 @@ import { latLng } from "leaflet";
 // import { GeodesicCircleClass, GeodesicLine } from "leaflet.geodesic";
 
 const LocationMarker = () => {
-  const [position, setPosition] = useState(latLng(50.8460886108987, 4.3561856932529315));
+  const [position, setPosition] = useState(latLng(45.71587354143691, 4.934977515880003));
   const map = useMapEvents({
     click() {
       map.locate();
@@ -26,32 +26,33 @@ const LocationMarker = () => {
 
   return position === null ? null : (
     <Marker position={position}>
-      <Popup>You are here</Popup>
+      <Popup>A close location to where you are</Popup>
     </Marker>
   );
 };
 
 export const LeafletMap = () => {
-  const x = 50.8460886108987;
-  const y = 4.3561856932529315;
+  const x_lys = 45.71587354143691;
+  const y_lys = 4.934977515880003;
 
   return (
     <>
-      <MapContainer center={[x, y]} zoom={13} scrollWheelZoom={false}>
+      <MapContainer center={[x_lys, y_lys]} zoom={5} scrollWheelZoom={true}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
+
         <Marker
-          position={[x, y]}
+          position={[x_lys, y_lys]}
           eventHandlers={{
             click: () => {
-              console.log("lat: ", x, "long: ", y);
+              console.log("lat: ", x_lys, "long: ", y_lys);
             },
           }}
         >
           <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+            This app runs here. <br /> Powered by HPE GreenLake.
           </Popup>
         </Marker>
 
