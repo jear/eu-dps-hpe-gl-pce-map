@@ -1,4 +1,4 @@
-# My metamorphosis ( Transformation ) : because I don't have to manage my IT infrastrure anymore, I can do devops peering with new colleagues to build and run  TypeScript in CI/CD pipelines :-)
+# ( Transformation ) Because I don't have to manage IT infrastrure anymore, I can do devops peering with new colleagues to build and run  TypeScript in CI/CD pipelines :-)
 
 TypeScript: JavaScript With Syntax For Types.
 
