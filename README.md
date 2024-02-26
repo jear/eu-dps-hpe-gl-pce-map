@@ -1,4 +1,5 @@
-# ( Transformation ) Because I don't have to manage IT infrastrure anymore, I can do devops peering with new colleagues to build and run  TypeScript in CI/CD pipelines :-)
+# ( Transforming people ) Because we don't have to manage IT infrastrure anymore, we can learn new stuff.
+# Here : devops peering with new colleagues to build, run, patch   TypeScript / React websites 
 
 TypeScript: JavaScript With Syntax For Types.
 
