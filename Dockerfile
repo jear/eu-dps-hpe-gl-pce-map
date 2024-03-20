@@ -1,3 +1,4 @@
+# the lazy version
 FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
