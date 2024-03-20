@@ -2,7 +2,7 @@
 FROM nginx:alpine
 COPY . /usr/share/nginx/html
 
-# Multi-stage build examfple
+# Multi-stage build example
 #FROM node:14
 #
 #WORKDIR /app
