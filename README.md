@@ -1,5 +1,5 @@
-# ( Transforming people ) Because we don't have to manage IT infrastrure anymore, we can learn new stuff.
-# Here : devops peering with new colleagues to build, run, patch   TypeScript / React websites 
+## ( Transforming people ) Because we don't have to manage IT infrastrure anymore, we can learn new stuff.
+## Here : devops peering with new colleagues to build, run, patch   TypeScript / React websites 
 
 TypeScript: JavaScript With Syntax For Types.
 
