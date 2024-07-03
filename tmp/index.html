@@ -17,8 +17,8 @@
 
       #map {
         /* configure the size of the map */
-        width: 50%;
-        height: 50%;
+        width: 80%;
+        height: 80%;
       
       }
 
@@ -50,7 +50,7 @@
     </style>
   </head>
   <body>
-    <h1>HPE GreenLake Private Cloud Enterprise</h1>
+    <h1>EU Cloud III - SP Alliance PoP</h1>
     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Mollitia sed fugiat nam aliquid ratione consequatur neque quas perferendis sint? Laboriosam reprehenderit dignissimos itaque dolorum odio obcaecati iste, beatae nam officiis?</p>
     <div id="map" ></div>
     <script>
@@ -72,7 +72,8 @@
       // marker.bindPopup("<b>Carrrefour de l\'Europe</b><br>I am a popup.").openPopup();
       // 
 
-      var cancom1 = new L.LatLng(53.619150000000026, 10.008105830680448);
+      var cancom1 = new L.LatLng(53.619150000000026, 10.008105830680448); // Germany
+      var cancom2 = new L.LatLng(48.158236925178855, 16.34122573558207); // NTT Global Data
 
       // var uniserver1 = new L.LatLng(52.61593968940498, 4.757832677993928);
       var uniserver1 = new L.LatLng(52.293548438775446, 4.945244057672121); // Equinix AM5 - Main A
@@ -102,15 +103,16 @@
       O.valueOf()._icon.style.filter = "hue-rotate(180deg)"; //or any color
       R.valueOf()._icon.style.filter = "hue-rotate(180deg)"; //or any color
 
-      var A1 = L.marker(uniserver1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver/Equinix DC1').addTo(map).bindPopup('Region_EU1-AZ1a');
-      var A2 = L.marker(uniserver2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver DC2').addTo(map).bindPopup('Region_EU1-AZ1b');
-      var A2 = L.marker(uniserver3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Uniserver DC3 - Backup and DR').addTo(map).bindPopup('Region_EU1-AZ1c');
+      var A1 = L.marker(uniserver1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - Uniserver/Equinix DC1').addTo(map).bindPopup('EU1-AZ1a');
+      var A2 = L.marker(uniserver2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - Uniserver DC2').addTo(map).bindPopup('EU1-AZ1b');
+      var A2 = L.marker(uniserver3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - Uniserver DC3 - Backup and DR').addTo(map).bindPopup('EU1-AZ1c');
   
-      var B1 = L.marker(cancom1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - Cancom DC1').addTo(map).bindPopup('Region_EU1-AZ2a');
+      var B1 = L.marker(cancom1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - Cancom DC1').addTo(map).bindPopup('EU2-AZ1a');
+      var B2 = L.marker(cancom2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - Cancom DC2').addTo(map).bindPopup('EU3-AZ1a');
 
-      var C1 = L.marker(ebrc1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC1').addTo(map).bindPopup('Region_EU1-AZ3a');
-      var C2 = L.marker(ebrc2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC2').addTo(map).bindPopup('Region_EU1-AZ3b');
-      var C3 = L.marker(ebrc3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Consortium - EBRC DC3').addTo(map).bindPopup('Region_EU1-AZ3c');
+      var C1 = L.marker(ebrc1, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - EBRC DC1').addTo(map).bindPopup('EU4-AZ1a');
+      var C2 = L.marker(ebrc2, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - EBRC DC2').addTo(map).bindPopup('EU4-AZ1b');
+      var C3 = L.marker(ebrc3, { draggable: false }).bindTooltip('HPE GreenLake PCE - Alliance - EBRC DC3').addTo(map).bindPopup('EU4-AZ1c');
 
       const geodesiccircle = new L.GeodesicCircle(O.getLatLng(), {
           weight: 7,
